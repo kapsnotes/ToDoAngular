@@ -1,0 +1,8 @@
+<td>{{ todo.name }}</td>
+<td>
+  <input type="checkbox" [(ngModel)]="todo.status" />
+</td>
+<td>
+  <button class="btn btn-outline-primary btn-sm" (click)="onEdit()">Edit</button>
+  <button class="btn btn-outline-danger btn-sm" (click)="onDelete()">Delete</button>
+</td>

@@ -1,0 +1,18 @@
+<div class="jumbotron">
+  <h3>Add new ToDo item:</h3>
+  <hr class="my-4">
+
+  <div *ngIf="toDoAddedInfo" class="alert alert-success alert-dismissible fade show" role="alert">
+    {{ toDoMessage }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="dismissAddedAlert()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <div class="form-group">
+    <label for="todo-to-add">To Do</label>
+    <input type="text" id="todo-to-add" class="form-control" #toDo>
+  </div>
+
+  <button class="btn btn-primary" (click)="addToDo(toDo)" >Add ToDo</button>
+</div>

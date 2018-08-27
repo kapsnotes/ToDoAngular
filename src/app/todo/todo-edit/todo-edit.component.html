@@ -1,0 +1,22 @@
+<div class="jumbotron">
+  <h3 class="display-4">Edit ToDo item:</h3>
+  <hr class="my-4">
+
+  <div class="form-group">
+    <label for="todo-to-add">To Do</label>
+    <input type="text" id="todo-to-add" class="form-control" [(ngModel)]="toDo.name">
+  </div>
+
+  <div class="form-check">
+    <input
+      class="form-check-input"
+      type="checkbox"
+      id="defaultCheck1"
+      [(ngModel)]="toDo.status">
+    <label class="form-check-label" for="defaultCheck1">
+      Done
+    </label>
+  </div>
+
+  <button class="btn btn-primary" (click)="hideForm()">Done</button>
+</div>

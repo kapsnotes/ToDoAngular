@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col">
+    <app-todo-add (toDoAdded)="toDoAdded($event)"></app-todo-add>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <app-todo-list
+      [todoList]="todos"
+      (onItemDelete)="onDelete($event)"
+      (onItemEdit)="onEdit($event)"></app-todo-list>
+  </div>
+</div>
+
+<div *ngIf="editFormVisible" class="row">
+  <div class="col">
+    <app-todo-edit
+      [toDo]="editFormItem"
+      (onHide)="hideEditForm()"></app-todo-edit>
+  </div>
+</div>

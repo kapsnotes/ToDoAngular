@@ -1,0 +1,17 @@
+<table class="table table-hover table-sm">
+  <thead>
+    <tr>
+      <th scope="col">To Do</th>
+      <th scope="col">Completed</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      app-todo-list-item
+      *ngFor="let todoListItem of todoList; let i = index"
+      [todo]="todoListItem"
+      [index]="i"
+      (onItemDelete)="onDelete($event)"
+      (onItemEdit)="onEdit($event)"></tr>
+  </tbody>
