@@ -9,7 +9,7 @@
   <tbody>
     <tr
       app-todo-list-item
-      *ngFor="let todoListItem of todoList; let i = index"
+      *ngFor="let todoListItem of toDoServices.todos; let i = index"
       [todo]="todoListItem"
       [index]="i"
       (onItemDelete)="onDelete($event)"

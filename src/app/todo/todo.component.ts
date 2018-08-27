@@ -6,14 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todo.component.css']
 })
 export class TodoComponent implements OnInit {
-  todos = [
-    {name: 'Angular Session 1', status: true},
-    {name: 'Angular Session 1 Assignment', status: true},
-    {name: 'Angular Session 2', status: true},
-    {name: 'Angular Session 2 Assignment', status: true},
-    {name: 'Angular Session 3', status: false},
-    {name: 'Angular Session 3 Assignment', status: false},
-  ];
+  // todos = [
+  //   {name: 'Angular Session 1', status: true},
+  //   {name: 'Angular Session 1 Assignment', status: true},
+  //   {name: 'Angular Session 2', status: true},
+  //   {name: 'Angular Session 2 Assignment', status: true},
+  //   {name: 'Angular Session 3', status: false},
+  //   {name: 'Angular Session 3 Assignment', status: false},
+  // ];
+
+  // todos = [
+  //   new ToDo('Angular Session 1', true),
+  //   new ToDo('Angular Session 1 Assignment', true),
+  //   new ToDo('Angular Session 2', true)
+  // ];
 
   editFormVisible = false;
   editFormItem = null;
@@ -23,20 +29,21 @@ export class TodoComponent implements OnInit {
   ngOnInit() {
   }
 
-  toDoAdded(toDo) {
-    this.todos.push({
-      name: toDo,
-      status: false
-    });
-  }
+  // toDoAdded(toDo) {
+  //   // this.todos.push({
+  //   //   name: toDo,
+  //   //   status: false
+  //   // });
+  //   // this.todos.push(new ToDo(toDo, false));
+  // }
 
   onDelete(index) {
-    this.todos.splice(index, 1);
+    // this.todos.splice(index, 1);
   }
 
   onEdit(index) {
-    this.editFormItem = this.todos[index];
-    this.editFormVisible = true;
+    // this.editFormItem = this.todos[index];
+    // this.editFormVisible = true;
   }
 
   hideEditForm() {

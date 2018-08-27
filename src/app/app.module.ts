@@ -9,6 +9,7 @@ import { TodoListComponent } from './todo/todo-list/todo-list.component';
 import { TodoAddComponent } from './todo/todo-add/todo-add.component';
 import { TodoEditComponent } from './todo/todo-edit/todo-edit.component';
 import { TodoListItemComponent } from './todo/todo-list/todo-list-item/todo-list-item.component';
+import { ToDoService } from './services/to-do.service';
 
 @NgModule({
   declarations: [
