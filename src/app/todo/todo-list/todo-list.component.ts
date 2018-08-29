@@ -1,5 +1,7 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {ToDoService} from '../../services/to-do.service';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { ToDoService } from '../../services/to-do.service';
 
 @Component({
   selector: 'app-todo-list',
@@ -12,8 +14,12 @@ export class TodoListComponent implements OnInit {
   // @Output() onItemEdit = new EventEmitter<number>();
   toDoServices: ToDoService;
 
-  constructor(toDoService: ToDoService) {
+  constructor(toDoService: ToDoService, private router: Router) {
     this.toDoServices = toDoService;
+  }
+
+  loadEditPage() {
+    this.router.navigate(['/todo', 'edit']);
   }
 
   ngOnInit() {

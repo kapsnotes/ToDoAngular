@@ -1,21 +1,41 @@
 import { Injectable } from '@angular/core';
 
 import { ToDo } from '../models/ToDo';
+import {Category} from '../models/Category';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ToDoService {
-  todos = [
-    new ToDo('Angular Session 1', true),
-    new ToDo('Angular Session 1 Assignment', true),
-    new ToDo('Angular Session 2', true)
-  ];
+  defaultCategory = new Category(1, 'Inbox');
+  currentId = 0;
 
-  constructor() { }
+  todos: ToDo[] = [];
+
+  constructor() {
+    this.addNewToDo('Angular Session 1', true);
+    this.addNewToDo('Angular Session 1 Assignment', true);
+    this.addNewToDo('Angular Session 2', true);
+  }
 
   toDoAdded(name: string) {
-    console.log('Adding ' + name);
-    this.todos.push(new ToDo(name, false));
+    this.addNewToDo(name, false);
+  }
+
+  addNewToDo(name: string, status: boolean) {
+    this.currentId++;
+    this.todos.push(
+      new ToDo(this.currentId, name, status, this.defaultCategory)
+    );
+  }
+
+  getToDo(id: number): ToDo {
+    // var toDo = this.todos.find((o) => {
+    //   return o.id == id;
+    // });
+    //return toDo;
+
+
+    return this.todos.find( o => o.id == id );
   }
 }

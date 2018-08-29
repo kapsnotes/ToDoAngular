@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -9,7 +10,12 @@ import { TodoListComponent } from './todo/todo-list/todo-list.component';
 import { TodoAddComponent } from './todo/todo-add/todo-add.component';
 import { TodoEditComponent } from './todo/todo-edit/todo-edit.component';
 import { TodoListItemComponent } from './todo/todo-list/todo-list-item/todo-list-item.component';
-import { ToDoService } from './services/to-do.service';
+
+const appRoutes: Routes = [
+  { path: '', component: TodoListComponent },
+  { path: 'todo/add', component: TodoAddComponent },
+  { path: 'todo/edit/:id', component: TodoEditComponent }
+];
 
 @NgModule({
   declarations: [
@@ -23,7 +29,8 @@ import { ToDoService } from './services/to-do.service';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
