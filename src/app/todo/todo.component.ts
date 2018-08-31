@@ -37,18 +37,18 @@ export class TodoComponent implements OnInit {
   //   // this.todos.push(new ToDo(toDo, false));
   // }
 
-  onDelete(index) {
-    // this.todos.splice(index, 1);
-  }
+  // onDelete(index) {
+  //   // this.todos.splice(index, 1);
+  // }
+  //
+  // onEdit(index) {
+  //   // this.editFormItem = this.todos[index];
+  //   // this.editFormVisible = true;
+  // }
 
-  onEdit(index) {
-    // this.editFormItem = this.todos[index];
-    // this.editFormVisible = true;
-  }
-
-  hideEditForm() {
-    this.editFormItem = null;
-    this.editFormVisible = false;
-  }
+  // hideEditForm() {
+  //   this.editFormItem = null;
+  //   this.editFormVisible = false;
+  // }
 
 }

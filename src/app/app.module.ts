@@ -13,8 +13,14 @@ import { TodoListItemComponent } from './todo/todo-list/todo-list-item/todo-list
 
 const appRoutes: Routes = [
   { path: '', component: TodoListComponent },
-  { path: 'todo/add', component: TodoAddComponent },
-  { path: 'todo/edit/:id', component: TodoEditComponent }
+  {
+    path: 'todo',
+    component: TodoListComponent,
+    children: [
+      { path: 'add', component: TodoAddComponent },
+      { path: 'edit/:id', component: TodoEditComponent }
+    ]
+  }
 ];
 
 @NgModule({

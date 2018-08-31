@@ -4,7 +4,7 @@
 
   <div class="form-group">
     <label for="todo-to-add">To Do</label>
-    <input type="text" id="todo-to-add" class="form-control" [(ngModel)]="toDo.name">
+    <input type="text" id="todo-to-add" class="form-control" [value]="toDo.name" #name>
   </div>
 
   <div class="form-check">
@@ -18,6 +18,19 @@
     </label>
   </div>
 
+  <p>
+    <a
+      [routerLink]="['/todo', 'edit', 3]"
+      [queryParams]="{a: 'A', b: 'B'}"
+      [fragment]="'Hello'"
+    >
+      Test Link
+    </a>
+    for item 3
+  </p>
+  <p>
+    {{ paramA }} - {{ paramB }} - {{ fragment }}
+  </p>
   <button class="btn btn-primary" (click)="hideForm()">Done</button>
   <button (click)="loadItem3()">Load item 3</button>
 </div>
