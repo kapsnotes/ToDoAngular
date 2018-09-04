@@ -18,8 +18,8 @@ export class ToDoService {
     this.addNewToDo('Angular Session 2', true);
   }
 
-  toDoAdded(name: string) {
-    this.addNewToDo(name, false);
+  toDoAdded(name: string, status: boolean) {
+    this.addNewToDo(name, status);
   }
 
   addNewToDo(name: string, status: boolean) {

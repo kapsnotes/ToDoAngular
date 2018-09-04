@@ -1,6 +1,7 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
-import {ToDoService} from '../../services/to-do.service';
+import { ToDoService } from '../../services/to-do.service';
 
 @Component({
   selector: 'app-todo-add',
@@ -17,21 +18,16 @@ export class TodoAddComponent implements OnInit {
   ngOnInit() {
   }
 
-  addToDo(toDo: HTMLInputElement) {
-    // this.toDoAdded.emit(toDo.value);
-    this.toDoService.toDoAdded(toDo.value);
+  addToDo(addToDoForm: NgForm) {
+    console.log(addToDoForm);
+    this.toDoService.toDoAdded(addToDoForm.value.toDo.name, addToDoForm.value.toDo.status);
 
-    this.toDoMessage = 'To Do \'' + toDo.value + '\' added.';
-    toDo.value = '';
+    this.toDoMessage = 'To Do \'' + addToDoForm.value.toDo.name + '\' added.';
     this.toDoAddedInfo = true;
 
-    setInterval(() => {
+    setTimeout(() => {
       this.toDoAddedInfo = false;
     }, 5000);
-
-    // setInterval(function () {
-    //   this.toDoAddedInfo = false;
-    // }, 5000);
   }
 
   dismissAddedAlert() {
