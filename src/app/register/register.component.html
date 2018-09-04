@@ -1,0 +1,40 @@
+<form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+
+  <div formGroupName="user">
+    <div>
+      <label for="username">User Name</label>
+      <input class="form-control" type="text" id="username" formControlName="userName">
+      <p
+        class="help-block"
+        *ngIf="!registerForm.get('user.userName').valid && registerForm.get('user.userName').touched">
+        This field is required.
+      </p>
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input class="form-control" type="text" name="email" formControlName="email">
+      <p
+        class="help-block"
+        *ngIf="!registerForm.get('user.email').valid && registerForm.get('user.email').touched">
+        This email is already registered.
+      </p>
+    </div>
+  </div>
+
+  <div>
+    <label for="password">Password</label>
+    <input class="form-control" type="password" name="password" formControlName="password">
+  </div>
+  <div>Gender</div>
+  <div *ngFor="let gender of genders">
+    <label>
+      <input type="radio" formControlName="gender" name="gender" [value]="gender"> {{ gender }}
+    </label>
+  </div>
+
+
+
+  <div>
+    <button class="btn btn-primary" type="submit">Register</button>
+  </div>
+</form>
