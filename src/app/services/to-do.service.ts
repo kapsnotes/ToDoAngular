@@ -14,7 +14,7 @@ export class ToDoService {
 
   constructor() {
     this.addNewToDo('Angular Session 1', true);
-    this.addNewToDo('Angular Session 1 Assignment', true);
+    this.addNewToDo('Angular Session 1 Assignment', false);
     this.addNewToDo('Angular Session 2', true);
   }
 

@@ -13,6 +13,7 @@ export class TodoListComponent implements OnInit {
   // @Output() onItemDelete = new EventEmitter<number>();
   // @Output() onItemEdit = new EventEmitter<number>();
   toDoServices: ToDoService;
+  showDoneTasks = true;
 
   constructor(toDoService: ToDoService, private router: Router) {
     this.toDoServices = toDoService;

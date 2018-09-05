@@ -1,6 +1,6 @@
 <td>{{ todo.id }}</td>
-<td>{{ todo.name }}</td>
-<td>{{ todo.category.name }}</td>
+<td>{{ todo.name | subString: 0: 20 }}</td>
+<td>{{ todo.category.name | lowercase }}</td>
 <td>
   <input type="checkbox" [(ngModel)]="todo.status" />
 </td>

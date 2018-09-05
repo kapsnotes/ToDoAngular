@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import {FormArray, FormControl, FormGroup, Validators} from '@angular/forms';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -28,8 +28,13 @@ export class RegisterComponent implements OnInit {
         ),
       }),
       'password': new FormControl(null),
-      'gender': new FormControl('Male')
+      'gender': new FormControl('Male'),
+      'roles': new FormArray([])
     });
+  }
+
+  onNewRoleAdded() {
+    (<FormArray>this.registerForm.get('roles')).push(new FormControl(null, Validators.required));
   }
 
   onRegister() {

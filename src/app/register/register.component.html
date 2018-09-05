@@ -32,7 +32,13 @@
     </label>
   </div>
 
-
+  <div class="form-group" formArrayName="roles">
+    <h2>Assigned roles</h2>
+    <button class="btn btn-primary" (click)="onNewRoleAdded()">Add role</button>
+    <div *ngFor="let role of registerForm.get('roles').controls; let i = index">
+      <input type="text" class="form-control" [formControlName]="i">
+    </div>
+  </div>
 
   <div>
     <button class="btn btn-primary" type="submit">Register</button>

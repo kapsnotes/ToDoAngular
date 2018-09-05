@@ -11,6 +11,9 @@ import { TodoAddComponent } from './todo/todo-add/todo-add.component';
 import { TodoEditComponent } from './todo/todo-edit/todo-edit.component';
 import { TodoListItemComponent } from './todo/todo-list/todo-list-item/todo-list-item.component';
 import { RegisterComponent } from './register/register.component';
+import { SubStringPipe } from './sub-string.pipe';
+import { ToDoStatusFilterPipe } from './to-do-status-filter.pipe';
+import { TestPipe } from './test.pipe';
 
 const appRoutes: Routes = [
   { path: '', component: TodoListComponent },
@@ -34,7 +37,10 @@ const appRoutes: Routes = [
     TodoAddComponent,
     TodoEditComponent,
     TodoListItemComponent,
-    RegisterComponent
+    RegisterComponent,
+    SubStringPipe,
+    ToDoStatusFilterPipe,
+    TestPipe
   ],
   imports: [
     BrowserModule,
